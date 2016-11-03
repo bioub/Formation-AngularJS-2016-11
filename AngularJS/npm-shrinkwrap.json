@@ -1,0 +1,10 @@
+{
+  "name": "exemples-angularjs",
+  "dependencies": {
+    "angular": {
+      "version": "1.5.8",
+      "from": "angular@1.5.8",
+      "resolved": "https://registry.npmjs.org/angular/-/angular-1.5.8.tgz"
+    }
+  }
+}

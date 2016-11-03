@@ -31,7 +31,7 @@ console['log'](Math['PI']);
 var logMethod = 'error'; // peut venir d'un fichier de config
 console[logMethod]('Message');
 
-// on peut utiliser des objets pour regrouper des valeurs
+// on peut utiliser des objets pour regrouper des valeurs ponctuellement
 
 // éviter de faire
 var coords = new Object();
@@ -143,3 +143,51 @@ Object.seal(contact);
 
 // freeze = seal + configurable à false pour tous
 Object.freeze(contact);
+
+// si on doit régulièrement instancier des objets similaires
+// on utilise des fonctions constructeurs
+// var xhr = new XMLHttpRequest();
+
+var Contact = function (prenom) {
+    this.prenom = prenom;
+};
+
+var romain = new Contact('Romain');
+console.log(typeof romain); // object
+console.log(typeof Contact); // function
+console.log(romain.prenom); // Romain
+
+// Simuler une propriété privée (grace à la closure)
+var Contact = function (prenom) {
+    this.getPrenom = function() {
+        return prenom
+    };
+    this.setPrenom = function(_prenom) {
+        prenom = _prenom;
+    };
+};
+
+var romain = new Contact('Romain');
+console.log(romain.prenom); // undefined
+console.log(romain.setPrenom('Eric'));
+console.log(romain.getPrenom()); // Eric
+
+// La closure est mauvaise en terme de perf
+// (autant de fonctions getPrenom que d'objet de type Contact)
+
+// En général les méthodes sont dans le prototype
+
+var Contact = function(prenom) {
+    this.prenom = prenom;
+};
+
+Contact.prototype.hello = function() {
+    return `Bonjour je m'appelle ${this.prenom}`;
+};
+
+var contact = new Contact('Romain');
+console.log(contact.prenom); // dans l'objet directement
+console.log(contact.hello()); // dans le prototype de la fonction constructeurs
+console.log(contact.hasOwnProperty('prenom')); // true
+console.log(contact.hasOwnProperty('hello')); // false
+console.log(contact.toto); // undefined
