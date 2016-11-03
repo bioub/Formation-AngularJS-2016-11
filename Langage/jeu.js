@@ -1,3 +1,4 @@
+// Module CommonJS (norme qu'on retrouve dans Node.js, Meteor...)
 const readline = require('readline');
 
 const rl = readline.createInterface({

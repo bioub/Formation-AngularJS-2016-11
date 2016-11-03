@@ -191,3 +191,24 @@ console.log(contact.hello()); // dans le prototype de la fonction constructeurs
 console.log(contact.hasOwnProperty('prenom')); // true
 console.log(contact.hasOwnProperty('hello')); // false
 console.log(contact.toto); // undefined
+
+class Voiture {
+    constructor(marque) {
+        this.marque = marque;
+    }
+    static getClass() {
+        return 'Voiture';
+    }
+    demarrer() {
+        return 'Vroom';
+    }
+}
+
+var peugeot = new Voiture('Peugeot');
+console.log(peugeot.marque);
+console.log(peugeot.demarrer());
+console.log(Voiture.getClass());
+
+console.log(typeof peugeot); // object
+console.log(typeof Voiture); // function
+console.log(typeof Voiture.prototype.demarrer); // function
