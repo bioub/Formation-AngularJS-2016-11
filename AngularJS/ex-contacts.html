@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <meta charset="UTF-8">
+        <title>Exemple Angular</title>
+    </head>
+    <body ng-controller="ContactCtrl">
+        <div>
+            Prénom : <input ng-model="contact.prenom">
+            Nom : <input ng-model="contact.nom">
+            <button ng-click="ajouter()">+</button>
+        </div>
+        <p ng-repeat="contact in contacts">
+            Bonjour {{contact.prenom}} {{contact.nom}}
+            <button ng-click="supprimer(contact)">-</button>
+        </p>
+        <script src="node_modules/angular/angular.js"></script>
+        <script src="ex-contacts.js"></script>
+    </body>
+</html>

@@ -3,14 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <title>Exemple Angular</title>
-        <link rel="stylesheet" href="node_modules/angular/angular-csp.css">
     </head>
-    <body ng-cloak>
+    <body>
         <div>
-            Prénom : <input ng-model="prenom">
+            Prénoms : <input ng-model="prenoms" ng-list>
         </div>
-        <p>
+        <p ng-repeat="prenom in prenoms track by $index" ng-class="{important: $first || $last}">
             Bonjour {{prenom}}
+            <button ng-if="$last">+</button>
         </p>
         <script src="node_modules/angular/angular.js"></script>
     </body>

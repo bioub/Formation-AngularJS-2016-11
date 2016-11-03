@@ -1,6 +1,7 @@
 {
   "name": "exemples-angularjs",
   "dependencies": {
+    "@types/angular": "^1.5.19",
     "angular": "^1.5.8"
   }
 }

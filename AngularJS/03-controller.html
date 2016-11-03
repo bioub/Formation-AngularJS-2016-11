@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="app">
     <head>
         <meta charset="UTF-8">
         <title>Exemple Angular</title>
-        <link rel="stylesheet" href="node_modules/angular/angular-csp.css">
     </head>
-    <body ng-cloak>
+    <body ng-controller="PrenomCtrl">
         <div>
             Prénom : <input ng-model="prenom">
+            <button ng-click="ajouter()">+</button>
         </div>
-        <p>
+        <p ng-repeat="prenom in prenoms track by $index">
             Bonjour {{prenom}}
         </p>
         <script src="node_modules/angular/angular.js"></script>
+        <script src="03-controller.js"></script>
     </body>
 </html>
