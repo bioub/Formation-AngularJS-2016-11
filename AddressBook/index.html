@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AddressBook</title>
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-  
+    <link href="node_modules/angular-loading-bar/build/loading-bar.css" rel="stylesheet">
   </head>
 
   <body>
@@ -33,6 +33,8 @@
 
     <div class="container">
 
+      <bs-alert type="'success'">Bravo</bs-alert>
+
       <ui-view></ui-view>
 
     </div><!-- /.container -->
@@ -42,12 +44,15 @@
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="node_modules/angular-resource/angular-resource.js"></script>
+    <script src="node_modules/angular-loading-bar/build/loading-bar.js"></script>
 
     <script src="app/app.module.js"></script>
     <script src="app/app.routes.js"></script>
     <script src="app/services/contact.service.js"></script>
+    <script src="app/services/404-interceptor.service.js"></script>
     <script src="app/contact-list/contact-list.controller.js"></script>
     <script src="app/contact-add/contact-add.controller.js"></script>
     <script src="app/contact-show/contact-show.controller.js"></script>
+    <script src="app/bs-alert/bs-alert.component.js"></script>
   </body>
 </html>

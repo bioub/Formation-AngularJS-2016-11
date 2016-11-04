@@ -1,11 +1,14 @@
-<form>
-  <div class="form-group">
+<form name="contactForm" novalidate ng-submit="ajouter()">
+  <div class="form-group" ng-class="{'has-error': contactForm.prenom.$invalid && contactForm.prenom.$dirty}">
     <label>Prénom</label>
-    <input class="form-control" placeholder="Email" ng-model="contact.prenom">
+    <input name="prenom" class="form-control" placeholder="Prénom" ng-model="contact.prenom" required>
+    <p ng-if="contactForm.prenom.$error.required && contactForm.prenom.$dirty" class="help-block">
+      Le prénom est obligatoire
+    </p>
   </div>
   <div class="form-group">
     <label>Nom</label>
-    <input class="form-control" placeholder="Password" ng-model="contact.nom">
+    <input class="form-control" placeholder="Nom" ng-model="contact.nom">
   </div>
   <button type="submit" class="btn btn-default">Ajouter</button>
 </form>
