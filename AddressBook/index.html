@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en" ng-app="app.module">
+<html lang="en" ng-app="app.module" ng-strict-di>
   <head>
     <base href="/">
     <meta charset="utf-8">
@@ -41,10 +41,13 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="node_modules/angular-resource/angular-resource.js"></script>
 
     <script src="app/app.module.js"></script>
     <script src="app/app.routes.js"></script>
+    <script src="app/services/contact.service.js"></script>
     <script src="app/contact-list/contact-list.controller.js"></script>
     <script src="app/contact-add/contact-add.controller.js"></script>
+    <script src="app/contact-show/contact-show.controller.js"></script>
   </body>
 </html>

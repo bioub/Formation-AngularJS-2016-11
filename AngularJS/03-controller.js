@@ -1,4 +1,6 @@
 (function() {
+    'use strict';
+
     // Création d'un module
     var app = angular.module('app', [])
 
@@ -14,6 +16,10 @@
             $scope.prenoms.push($scope.prenom);
             $scope.prenom = '';
         };
+
+        $scope.$watch('prenom', function() {
+            console.log('prenom a évolué : ' + $scope.prenom);
+        });
     }]);
 
 }());

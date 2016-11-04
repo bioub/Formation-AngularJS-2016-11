@@ -8,7 +8,12 @@
 
 <body ng-controller="ContactCtrl">
 	<div>
-		Prénom : <input ng-model="contact.prenom"> Nom : <input ng-model="contact.nom">
+		<p>
+			Prénom : <input ng-model="contact.prenom">
+		</p>
+		<p>
+			Nom : <input ng-model="contact.nom">
+		</p>
 		<button ng-click="ajouter()">+</button>
 	</div>
 	<p ng-repeat="contact in contacts">

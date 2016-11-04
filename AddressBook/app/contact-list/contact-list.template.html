@@ -4,9 +4,13 @@
             <a ui-sref="contact.ajouter" ui-sref-active="active" class="btn btn-primary btn-block">Ajouter</a>
 		</p>
 
+		<p>
+			<input class="form-control" placeholder="Filtrer" ng-model="filtreContact">
+		</p>
+
 		<div class="list-group">
-            <a href="#" class="list-group-item" ng-repeat="contact in contacts">
-                {{contact.prenom}} {{contact.nom}}
+            <a ui-sref="contact.show({id: contact.id})" ui-sref-active="active" class="list-group-item" ng-repeat="contact in contacts | filter:filtreContact">
+                {{contact.prenom}} {{contact.nom | uppercase}}
             </a>
 		</div>
 
