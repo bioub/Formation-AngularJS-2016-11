@@ -1,0 +1,19 @@
+<div class="row">
+	<div class="col-md-3">
+        <p>
+            <a ui-sref="contact.ajouter" ui-sref-active="active" class="btn btn-primary btn-block">Ajouter</a>
+		</p>
+
+		<div class="list-group">
+            <a href="#" class="list-group-item" ng-repeat="contact in contacts">
+                {{contact.prenom}} {{contact.nom}}
+            </a>
+		</div>
+
+	</div>
+	<div class="col-md-9">
+
+        <ui-view></ui-view>
+
+	</div>
+</div>
